@@ -1,0 +1,255 @@
+---
+title: "GDOCCON"
+author: "Harss"
+output:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+format:
+  html:
+    theme: custom
+editor: visual
+---
+
+```{=html}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Root variables for colors, fonts, and sizing */
+:root {
+  --base-clr: #11121a; /* Sidebar color */
+  --text-clr: #ffffff; /* Text color */
+  --line-clr: #313347; /* Sidebar border color */
+  --hover-clr: #3e4056; /* Sidebar hover background */
+  --font-family: 'Arial', sans-serif; /* Default font */
+}
+
+
+
+main {
+  margin-left: 260px; /* Adjust to match the width of the sidebar, including padding */
+  padding: 10em;
+  flex-grow: 1; /* Fill horizontal space */
+  border-radius: 8px;
+  margin: 2em auto; /* Center the content with vertical spacing */
+  max-width: 1200px; /* Limit maximum width for readability */
+}
+
+main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  text-align: center; /* Center the title */
+}
+
+main p {
+  font-size: 1.2rem; /* Bigger font for readability */
+  line-height: 1.8; /* Line spacing */
+  text-align: justify; /* Justify the text for better flow */
+  margin: 1em 0;
+}
+
+
+  body {
+    font-family: 'Tahoma','Verdana',sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+  }
+
+h1 {
+  color: #4B0082; /* A fresh sea green */
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif; /* Changed font to Montserrat */
+  padding-top: 30px;
+}
+
+
+
+  hr {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  .chart-container {
+    margin-bottom: 50px;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 15px; 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+  }
+
+
+  .chart-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+  }
+
+  .code-tools {
+    background-color: #f0f0f0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table th {
+    background-color: #4B0082;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+</style>
+```
+# Introduction
+
+The healthcare industry has seen significant transformations over the past decade. This report provides insights into various healthcare trends, including the impact of technology, patient care improvements, and cost management strategies.
+
+This document includes interactive charts that visualize key metrics and trends in the healthcare sector.
+
+## Healthcare Trends
+
+Over the past few years, several major trends have emerged in the healthcare sector:
+
+-   **Telemedicine Growth**: The use of virtual consultations has skyrocketed, especially after the COVID-19 pandemic.
+-   **AI and Data Analytics**: Artificial intelligence and data analytics are revolutionizing diagnostics, treatment planning, and patient care.
+-   **Patient-Centered Care**: There has been a shift toward personalized healthcare, where treatment is tailored to the individual.
+
+## Healthcare Costs
+
+The rising costs of healthcare are a major concern. Factors driving costs include:
+
+-   **Aging Population**: Older populations require more frequent healthcare services.
+-   **Chronic Diseases**: Increased prevalence of chronic diseases such as diabetes and hypertension.
+-   **Advances in Technology**: New medical technologies and treatments often come at a high cost.
+
+### Healthcare Analysis Plots
+
+```{r,echo=FALSE,fig.show='hold',message=FALSE,warning=FALSE}
+options(repos = c(CRAN = "https://cran.rstudio.com"))
+
+
+library(ggplot2,quiet=True)
+library(plotly,quiet=True)
+library(htmltools)
+
+
+years <- c(2015, 2016, 2017, 2018, 2019, 2020) 
+costs <- c(500, 520, 550, 580, 600, 630)
+
+
+data <- data.frame(years, costs)
+
+
+p <- ggplot(data, aes(x = years, y = costs)) + geom_line(color = "blue") + geom_point() + theme_minimal() + labs(title = "Healthcare Costs Over Time", x = "Year", y = "Cost in Billions ($)")
+
+
+
+div(class = "chart-container",ggplotly(p))
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly,quiet=True)
+
+
+data <- data.frame(
+  Region = c("North", "South", "East", "West"),
+  Expenditure = c(1200, 1500, 1100, 1300)
+)
+
+
+plot <- ggplot(data, aes(x=Region, y=Expenditure, fill=Region)) +
+  geom_bar(stat="identity") +
+  labs(title="Healthcare Expenditure by Region", x="Region", y="Expenditure (in USD)") +
+  theme_minimal()
+
+div(class = "chart-container",ggplotly(plot))
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly,quiet=True)
+
+
+set.seed(42)
+ages <- data.frame(Age = round(rnorm(1000, mean=50, sd=15), 0))
+plot <- ggplot(ages, aes(x=Age)) +
+  geom_histogram(binwidth=5, fill="darkgreen", color="white") +
+  labs(title="Patient Age Distribution", x="Age", y="Frequency") +
+  theme_minimal()
+
+div(class = "chart-container",ggplotly(plot))
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly,quiet=True)
+
+
+data <- data.frame(
+  Ward = rep(c("General", "ICU", "Surgical", "Maternity"), each=30),
+  Length_of_Stay = c(rnorm(30, 5, 2), rnorm(30, 10, 3), rnorm(30, 7, 2), rnorm(30, 4, 1))
+)
+
+
+plot <- ggplot(data, aes(x=Ward, y=Length_of_Stay, fill=Ward)) +
+  geom_boxplot() +
+  labs(title="Length of Stay by Ward", x="Ward", y="Length of Stay (days)") +
+  theme_minimal()
+
+div(class = "chart-container",ggplotly(plot))
+
+```
+
+This chart shows the trend of healthcare costs from 2015 to 2020. The costs have been steadily increasing, indicating a significant rise in healthcare spending.
+
+## Healthcare Workforce
+
+The healthcare workforce plays a crucial role in providing care. Key statistics include:
+
+-   **Nurse-to-Patient Ratio**: A higher nurse-to-patient ratio has been linked to better patient outcomes.
+
+-   **Physician Shortage**: Many regions face a shortage of primary care physicians, leading to increased pressure on healthcare systems.
+
+    | Year | Total Physicians | Total Nurses | Nurse-to-Patient Ratio |
+    |------|------------------|--------------|------------------------|
+    | 2015 | 800,000          | 3,000,000    | 1:4                    |
+    | 2016 | 820,000          | 3,100,000    | 1:4                    |
+    | 2017 | 840,000          | 3,200,000    | 1:4                    |
+    | 2018 | 860,000          | 3,300,000    | 1:4                    |
+    | 2019 | 880,000          | 3,400,000    | 1:4                    |
+
+    ## Conclusion
+
+    In conclusion, the healthcare industry continues to evolve with a focus on innovation, efficiency, and patient-centered care. The trends, such as the rise of telemedicine and the increasing adoption of AI, will shape the future of healthcare. However, the challenges related to cost management and workforce shortages must be addressed to ensure sustainable growth.

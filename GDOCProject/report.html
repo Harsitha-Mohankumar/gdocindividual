@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Harss">
+
+<title>GDOCCON</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="report_files/libs/quarto-html/quarto.js"></script>
+<script src="report_files/libs/quarto-html/popper.min.js"></script>
+<script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="report_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="report_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="report_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="report_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="report_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="report_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="report_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="report_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="report_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">GDOCCON</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harss </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Root variables for colors, fonts, and sizing */
+:root {
+  --base-clr: #11121a; /* Sidebar color */
+  --text-clr: #ffffff; /* Text color */
+  --line-clr: #313347; /* Sidebar border color */
+  --hover-clr: #3e4056; /* Sidebar hover background */
+  --font-family: 'Arial', sans-serif; /* Default font */
+}
+
+
+
+main {
+  margin-left: 260px; /* Adjust to match the width of the sidebar, including padding */
+  padding: 10em;
+  flex-grow: 1; /* Fill horizontal space */
+  border-radius: 8px;
+  margin: 2em auto; /* Center the content with vertical spacing */
+  max-width: 1200px; /* Limit maximum width for readability */
+}
+
+main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  text-align: center; /* Center the title */
+}
+
+main p {
+  font-size: 1.2rem; /* Bigger font for readability */
+  line-height: 1.8; /* Line spacing */
+  text-align: justify; /* Justify the text for better flow */
+  margin: 1em 0;
+}
+
+
+  body {
+    font-family: 'Tahoma','Verdana',sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+  }
+
+h1 {
+  color: #4B0082; /* A fresh sea green */
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif; /* Changed font to Montserrat */
+  padding-top: 30px;
+}
+
+
+
+  hr {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  .chart-container {
+    margin-bottom: 50px;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 15px; 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+  }
+
+
+  .chart-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+  }
+
+  .code-tools {
+    background-color: #f0f0f0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table th {
+    background-color: #4B0082;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+</style>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>The healthcare industry has seen significant transformations over the past decade. This report provides insights into various healthcare trends, including the impact of technology, patient care improvements, and cost management strategies.</p>
+<p>This document includes interactive charts that visualize key metrics and trends in the healthcare sector.</p>
+<section id="healthcare-trends" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-trends">Healthcare Trends</h2>
+<p>Over the past few years, several major trends have emerged in the healthcare sector:</p>
+<ul>
+<li><strong>Telemedicine Growth</strong>: The use of virtual consultations has skyrocketed, especially after the COVID-19 pandemic.</li>
+<li><strong>AI and Data Analytics</strong>: Artificial intelligence and data analytics are revolutionizing diagnostics, treatment planning, and patient care.</li>
+<li><strong>Patient-Centered Care</strong>: There has been a shift toward personalized healthcare, where treatment is tailored to the individual.</li>
+</ul>
+</section>
+<section id="healthcare-costs" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-costs">Healthcare Costs</h2>
+<p>The rising costs of healthcare are a major concern. Factors driving costs include:</p>
+<ul>
+<li><strong>Aging Population</strong>: Older populations require more frequent healthcare services.</li>
+<li><strong>Chronic Diseases</strong>: Increased prevalence of chronic diseases such as diabetes and hypertension.</li>
+<li><strong>Advances in Technology</strong>: New medical technologies and treatments often come at a high cost.</li>
+</ul>
+<section id="healthcare-analysis-plots" class="level3">
+<h3 class="anchored" data-anchor-id="healthcare-analysis-plots">Healthcare Analysis Plots</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="chart-container">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-ed1a2825e5f92a240af4" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-ed1a2825e5f92a240af4">{"x":{"data":[{"x":[2015,2016,2017,2018,2019,2020],"y":[500,520,550,580,600,630],"text":["years: 2015<br />costs: 500","years: 2016<br />costs: 520","years: 2017<br />costs: 550","years: 2018<br />costs: 580","years: 2019<br />costs: 600","years: 2020<br />costs: 630"],"type":"scatter","mode":"lines+markers","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Healthcare Costs Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2014.75,2020.25],"tickmode":"array","ticktext":["2015","2016","2017","2018","2019","2020"],"tickvals":[2015,2016,2017,2018,2019,2020],"categoryorder":"array","categoryarray":["2015","2016","2017","2018","2019","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[493.5,636.5],"tickmode":"array","ticktext":["520","560","600"],"tickvals":[520,560,600],"categoryorder":"array","categoryarray":["520","560","600"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Cost in Billions ($)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"82147ff67637":{"x":{},"y":{},"type":"scatter"},"821444454918":{"x":{},"y":{}}},"cur_data":"82147ff67637","visdat":{"82147ff67637":["function (y) ","x"],"821444454918":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="chart-container">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1ba8c5175490924990ba" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-1ba8c5175490924990ba">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[1100],"text":"Region: East<br />Expenditure: 1100<br />Region: East","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"East","legendgroup":"East","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[1200],"text":"Region: North<br />Expenditure: 1200<br />Region: North","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"North","legendgroup":"North","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[1500],"text":"Region: South<br />Expenditure: 1500<br />Region: South","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"South","legendgroup":"South","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[4],"y":[1300],"text":"Region: West<br />Expenditure: 1300<br />Region: West","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"West","legendgroup":"West","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":48.949771689497723},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Healthcare Expenditure by Region","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["East","North","South","West"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["East","North","South","West"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Region","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-75,1575],"tickmode":"array","ticktext":["0","500","1000","1500"],"tickvals":[0,500,1000,1500],"categoryorder":"array","categoryarray":["0","500","1000","1500"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Expenditure (in USD)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Region","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"821445c81ca3":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"821445c81ca3","visdat":{"821445c81ca3":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="chart-container">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-67b8698f81d1add6fe70" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-67b8698f81d1add6fe70">{"x":{"data":[{"orientation":"v","width":[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100],"y":[1,3,3,11,20,33,59,83,94,136,142,110,107,74,70,26,14,7,3,1,3],"text":["count:   1<br />Age:   0","count:   3<br />Age:   5","count:   3<br />Age:  10","count:  11<br />Age:  15","count:  20<br />Age:  20","count:  33<br />Age:  25","count:  59<br />Age:  30","count:  83<br />Age:  35","count:  94<br />Age:  40","count: 136<br />Age:  45","count: 142<br />Age:  50","count: 110<br />Age:  55","count: 107<br />Age:  60","count:  74<br />Age:  65","count:  70<br />Age:  70","count:  26<br />Age:  75","count:  14<br />Age:  80","count:   7<br />Age:  85","count:   3<br />Age:  90","count:   1<br />Age:  95","count:   3<br />Age: 100"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,100,0,1)","line":{"width":1.8897637795275593,"color":"rgba(255,255,255,1)"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Patient Age Distribution","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.75,107.75],"tickmode":"array","ticktext":["0","25","50","75","100"],"tickvals":[0,25,50,75,100],"categoryorder":"array","categoryarray":["0","25","50","75","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Age","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.1000000000000005,149.09999999999999],"tickmode":"array","ticktext":["0","50","100"],"tickvals":[0,50,100],"categoryorder":"array","categoryarray":["0","50","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Frequency","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"821431e458cc":{"x":{},"type":"bar"}},"cur_data":"821431e458cc","visdat":{"821431e458cc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="chart-container">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-3fa01f7c23d34235ad0b" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-3fa01f7c23d34235ad0b">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[9.650116987430259,6.0482443623021833,6.9414668328171807,5.7539467943052287,3.0081332069156872,3.80503417390391,5.3305028461603046,-0.85695435715513479,3.3041715468429018,6.5971690244468917,4.4030880240695618,4.4327772461092581,6.7390386132975282,3.9112894306020465,6.2576064707552064,2.1553310841092173,2.5449747333314336,1.6517889685111369,5.1687969644897569,4.5877486720591989,7.8837432805641185,4.9164357932292715,7.7075089555275573,8.8904505518456673,4.0181235325837168,5.7768781498892237,3.3102134816280397,6.475980735742179,2.8404793374322757,2.9470522475127479],"hoverinfo":"y","type":"box","fillcolor":"rgba(248,118,109,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"General","legendgroup":"General","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"y":[10.866380084736626,10.272433957861525,10.787869530133666,10.208004738373761,8.4140685434295257,9.6093935064437019,14.860476233067448,9.9463146300295886,6.0445318031521218,7.4663195182561681,6.6945553825266826,7.2997295709775045,6.2167482405325627,2.1224532925512856,12.007197247571721,11.980124527692329,9.2481986938266711,7.828608049138543,7.5634551030117603,11.196203008055239,10.679690721638131,11.264930739259633,10.014513831172296,11.856951745289557,11.293401833457782,11.674937110561668,11.487883842016025,14.985657222837336,6.8348961633864906,14.524974060340012],"hoverinfo":"y","type":"box","fillcolor":"rgba(124,174,0,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"ICU","legendgroup":"ICU","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"y":[2.682504529967618,4.0730291461596222,3.43181415143163,2.9415493312161685,4.2593135384170688,4.373134504519161,5.2646667692841467,4.3252249960682647,3.8615326804916945,6.6024688972798007,3.3497155715120854,2.9968167716866376,3.4648860871255218,3.8895854332232123,4.6004301693135732,4.4158450595986816,3.894249353323008,3.1434374617538787,5.1273273343221621,4.9162816214484533,3.275620407275639,4.6867790875747426,4.4500857916446117,5.0452216061050379,4.1496290344374396,2.8589328467993065,4.8024994024196577,3.2712834690305539,4.5272092857284809,5.6734787722123095],"hoverinfo":"y","type":"box","fillcolor":"rgba(0,191,196,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"Maternity","legendgroup":"Maternity","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"y":[6.3315826866898517,6.8700385123631182,7.1621630774268059,6.1035704089223177,1.8923860994680686,6.3741349297619712,7.0827663040805948,3.5245438773247613,8.0998793193967611,5.8054526148133565,9.8954836120730967,7.5297362285285185,5.4224343844350571,7.3354644413430572,7.5151662164025206,8.8240947349006174,6.6862552348902655,2.9332485831058266,4.4006683538428497,5.285498680141929,7.8525305890723809,6.4303274738304923,5.7712629160602766,5.3102183356850343,7.3073899144377439,5.2971354484436244,6.2041578541142295,5.1200455474380941,4.2234925171611648,8.9103691777267962],"hoverinfo":"y","type":"box","fillcolor":"rgba(199,124,255,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"Surgical","legendgroup":"Surgical","showlegend":true,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Length of Stay by Ward","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["General","ICU","Maternity","Surgical"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["General","ICU","Maternity","Surgical"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Ward","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-1.6490849361547584,15.77778780183696],"tickmode":"array","ticktext":["0","5","10","15"],"tickvals":[0,5,10,15],"categoryorder":"array","categoryarray":["0","5","10","15"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Length of Stay (days)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Ward","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"82143348501b":{"x":{},"y":{},"fill":{},"type":"box"}},"cur_data":"82143348501b","visdat":{"82143348501b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<p>This chart shows the trend of healthcare costs from 2015 to 2020. The costs have been steadily increasing, indicating a significant rise in healthcare spending.</p>
+</section>
+</section>
+<section id="healthcare-workforce" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-workforce">Healthcare Workforce</h2>
+<p>The healthcare workforce plays a crucial role in providing care. Key statistics include:</p>
+<ul>
+<li><p><strong>Nurse-to-Patient Ratio</strong>: A higher nurse-to-patient ratio has been linked to better patient outcomes.</p></li>
+<li><p><strong>Physician Shortage</strong>: Many regions face a shortage of primary care physicians, leading to increased pressure on healthcare systems.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Total Physicians</th>
+<th>Total Nurses</th>
+<th>Nurse-to-Patient Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2015</td>
+<td>800,000</td>
+<td>3,000,000</td>
+<td>1:4</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>820,000</td>
+<td>3,100,000</td>
+<td>1:4</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td>840,000</td>
+<td>3,200,000</td>
+<td>1:4</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>860,000</td>
+<td>3,300,000</td>
+<td>1:4</td>
+</tr>
+<tr class="odd">
+<td>2019</td>
+<td>880,000</td>
+<td>3,400,000</td>
+<td>1:4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion" class="anchored">Conclusion</h2>
+<p>In conclusion, the healthcare industry continues to evolve with a focus on innovation, efficiency, and patient-centered care. The trends, such as the rise of telemedicine and the increasing adoption of AI, will shape the future of healthcare. However, the challenges related to cost management and workforce shortages must be addressed to ensure sustainable growth.</p></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
